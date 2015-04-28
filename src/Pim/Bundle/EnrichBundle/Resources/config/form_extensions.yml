@@ -7,6 +7,12 @@ extensions:
             buttons: header .actions
             meta: header .meta
 
+    sequential-edit:
+        module: pim/product-edit-form/sequential-edit
+        parent: product-edit-form
+        insertAction: before
+        targetZone: header
+
     form-tabs:
         module: pim/product-edit-form/form-tabs
         parent: product-edit-form

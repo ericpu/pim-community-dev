@@ -1,0 +1,28 @@
+<div class="row-fluid">
+    <span class="span3 right-aligned">
+        <% if (previousObject) { %>
+            <a href="javascript:void(0);" class="previous" data-id="<%= previousObject.meta.id %>" data-original-title="Skip back to &quot;AKNTS_WPM&quot; without saving." data-toggle="tooltip" data-placement="bottom">
+                <i class="icon-chevron-left"></i>
+                &nbsp;&nbsp;
+                <%= previousObject.meta.label.length > 25 ? previousObject.meta.label.slice(0, 22) + '...' : previousObject.meta.label %>
+            </a>
+        <% } %>
+    </span>
+    <span class="span6">
+        <div class="progress progress-bar">
+            <div class="bar" style="width: <%= ratio %>%;">
+            <% if (ratio < 30) { %></div>&nbsp;&nbsp;<% } %>
+            <%= currentIndex %> / <%= objectCount %> <%= _.__('Products') %>
+            <% if (ratio >= 30) { %></div><% } %>
+        </div>
+    </span>
+    <span class="span3">
+        <% if (nextObject) { %>
+            <a href="javascript:void(0);" class="next" data-id="<%= nextObject.meta.id %>" data-original-title="Skip to &quot;AKNTS_WPXL&quot; without saving." data-toggle="tooltip" data-placement="bottom">
+                <%= nextObject.meta.label.length > 25 ? nextObject.meta.label.slice(0, 22) + '...' : nextObject.meta.label %>
+                &nbsp;&nbsp;
+                <i class="icon-chevron-right"></i>
+            </a>
+        <% } %>
+    </span>
+</div>
